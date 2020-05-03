@@ -130,6 +130,30 @@ int main()
                     if(i==brKlijenata)
                         cout<<"Trazenog broja nema.";
                 }
+        else if(izbor==5)
+                {
+                    cout<<"Racuni sortirani A-Z"<<endl;
+                    copy(prezimeIme,prezimeIme+brKlijenata,prezimeIme2);
+                    copy(saldo,saldo+brKlijenata,saldo2);
+                    copy(brRacuna,brRacuna+brKlijenata,brRacuna2);
+                    for(int i=0;i<brKlijenata;i++)
+                    {
+                        for(int j=brKlijenata-1;j>i;j--)
+                        {
+                          if(prezimeIme[i]>prezimeIme[i+1]){
+                              swap(prezimeIme2[i],prezimeIme2[i+1]);
+                              swap(saldo2[i],saldo2[i+1]);
+                              swap(brRacuna2[i],brRacuna2[i+1]);
+                          }
+                        }
+
+                    }
+
+                        for(int i=0; i<brKlijenata; i++)
+                        {
+                            cout << brRacuna2[i]<< ", "<< prezimeIme2[i]<<", "<<saldo2[i]<<endl;
+                        }
+                }
      }
     return 0;
 }
