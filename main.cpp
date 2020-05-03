@@ -6,6 +6,22 @@
 #include<numeric>
 using namespace std;
 
+bool negativni_saldo(double saldo)
+{
+    if(saldo<0)
+        return true;
+    else
+        return false;
+
+}
+bool tekuci(unsigned long long broj)
+{
+    if(broj/10000000==32)
+        return true;
+    else
+        return false;
+}
+
 int main()
 {
     int brKlijenata=0;
@@ -56,6 +72,19 @@ int main()
             cin >> saldo[brKlijenata];
             brKlijenata++;
         }
+        else if(izbor==2)
+                {
+                    for(int i=0; i<brKlijenata; i++)
+                    {
+                        cout << brRacuna[i] << ", " << prezimeIme[i] << ", " << saldo[i] << endl;
+                    }
+                    cout<<"Suma svih salda iznosi:"<<accumulate(saldo,saldo+brKlijenata, 0.0)<<endl;
+                    int max_index=max_element(saldo,saldo+brKlijenata)-saldo;
+                    cout<<"Klijent koji ima najveci saldo: "<< prezimeIme[max_index]<<endl;
+                    cout<<"Broj racuna sa negativnim saldom: "<<count_if(saldo,saldo+brKlijenata,negativni_saldo)<<endl;
+                    cout<<"Broj tekucih racuna: "<<count_if(brRacuna,brRacuna+brKlijenata,tekuci)<<endl;
+                }
+
      }
     return 0;
 }
