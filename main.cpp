@@ -154,6 +154,17 @@ int main()
                             cout << brRacuna2[i]<< ", "<< prezimeIme2[i]<<", "<<saldo2[i]<<endl;
                         }
                 }
-     }
-    return 0;
+        else if(izbor==7)
+                {
+                        cout << "Izlaz iz programa" << endl;
+                        break;
+                }
+                else
+                {
+                    cout << "Krivi unos. << endl";
+                }
+                cout<<endl;
+                system("pause");
+            }
+            return 0;
 }
